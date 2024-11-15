@@ -14,7 +14,7 @@
 }
 @media (max-width: 1300px) {
   .header-wrapper {
-    align-items: flex-start;
+    align-items: center;
   }
 
   menu {
