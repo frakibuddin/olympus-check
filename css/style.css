@@ -3,6 +3,7 @@
 * {
   padding: 0;
   margin: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 body {
@@ -17,7 +18,11 @@ body {
   right: 0;
   z-index: 999;
   background: #fff;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
   transform: translateY(-100%);
 }
 .search-close {
@@ -60,6 +65,8 @@ ul {
 }
 .header-search-bar.search-open {
   top: 0;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
   transform: translateY(0);
 }
 /* header */
@@ -71,17 +78,27 @@ header {
   z-index: 3;
 }
 .header-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 .header-search {
   cursor: pointer;
 }
 .header-search img {
+  -webkit-transform: translateY(5px);
+  -ms-transform: translateY(5px);
   transform: translateY(5px);
 }
 menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   list-style: none;
   gap: 25px;
@@ -91,6 +108,8 @@ menu ul li a {
   color: #fff;
   font-size: 16px;
   text-decoration: none;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
   padding: 10px 0;
   position: relative;
@@ -103,6 +122,8 @@ menu ul li a::after {
   left: 0;
   height: 2px;
   background-color: #28cdd6;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
 }
 menu ul li:hover a::after,
@@ -146,9 +167,11 @@ menu ul li.active a {
   position: absolute;
   bottom: -20px;
   left: 10%;
+  -webkit-filter: blur(500px);
   filter: blur(500px);
 }
 .login-frm {
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   background: rgba(255, 255, 255, 0.05);
   width: 680px;
@@ -175,12 +198,16 @@ menu ul li.active a {
 .eye-icon {
   position: absolute;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   right: 25px;
 }
 .check-icon {
   position: absolute;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   right: 25px;
 }
@@ -192,6 +219,8 @@ menu ul li.active a {
   width: 20px;
   height: 3px;
   background-color: #8e9393;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
 .input-box input {
@@ -221,6 +250,8 @@ menu ul li.active a {
   bottom: 0px;
   left: 0px;
   padding-bottom: 5px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 .input-box input:focus {
@@ -228,6 +259,8 @@ menu ul li.active a {
 }
 .input-box input:focus + .label-name .content-name,
 .input-box input:valid + .label-name .content-name {
+  -webkit-transform: translateY(-70%);
+  -ms-transform: translateY(-70%);
   transform: translateY(-70%);
   font-size: 15px;
   left: 0px;
@@ -242,11 +275,11 @@ menu ul li.active a {
   text-decoration: none;
 }
 .form-text {
-  display: flex;
-  text-align: center;
-  justify-content: center;
   color: #f4f9f9;
   gap: 5px;
+}
+.form-text a {
+  display: inline-block;
 }
 .btn-blue {
   padding: 15px 10px;
@@ -258,6 +291,8 @@ menu ul li.active a {
   font-size: 18px;
   font-weight: 600;
   margin: 45px 0;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
 }
 .btn-blue:hover {
@@ -266,6 +301,7 @@ menu ul li.active a {
 footer {
   padding: 30px 10px;
   background: rgba(21, 25, 25, 0.4);
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   position: absolute;
   bottom: 0;
@@ -285,20 +321,30 @@ input:-internal-autofill-selected {
 .r-role-check {
   background: #0e0e0e;
   border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-bottom: 45px;
   color: #8e9393;
   font-weight: 600;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   text-align: center;
   overflow: hidden;
 }
 .r-role-check span {
+  -ms-flex-preferred-size: 50%;
   flex-basis: 50%;
   padding: 12px 20px;
   display: block;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
   transition: 0.4s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
   cursor: pointer;
 }
@@ -330,7 +376,13 @@ input:-internal-autofill-selected {
     cursor: pointer;
     border: 1px solid var(--bc, var(--border));
     background: transparent;
+    -webkit-transition: background 0.3s, border-color 0.3s,
+      -webkit-box-shadow 0.2s;
+    transition: background 0.3s, border-color 0.3s, -webkit-box-shadow 0.2s;
+    -o-transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
     transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
+    transition: background 0.3s, border-color 0.3s, box-shadow 0.2s,
+      -webkit-box-shadow 0.2s;
   }
   .checkbox-wrapper-13 input[type="checkbox"]:after {
     content: "";
@@ -338,8 +390,17 @@ input:-internal-autofill-selected {
     left: 0;
     top: 0;
     position: absolute;
+    -webkit-transition: opacity var(--d-o, 0.2s),
+      -webkit-transform var(--d-t, 0.3s) var(--d-t-e, ease);
+    transition: opacity var(--d-o, 0.2s),
+      -webkit-transform var(--d-t, 0.3s) var(--d-t-e, ease);
+    -o-transition: transform var(--d-t, 0.3s) var(--d-t-e, ease),
+      opacity var(--d-o, 0.2s);
     transition: transform var(--d-t, 0.3s) var(--d-t-e, ease),
       opacity var(--d-o, 0.2s);
+    transition: transform var(--d-t, 0.3s) var(--d-t-e, ease),
+      opacity var(--d-o, 0.2s),
+      -webkit-transform var(--d-t, 0.3s) var(--d-t-e, ease);
   }
   .checkbox-wrapper-13 input[type="checkbox"]:checked {
     --b: var(--active);
@@ -365,6 +426,7 @@ input:-internal-autofill-selected {
     --bc: var(--border-hover);
   }
   .checkbox-wrapper-13 input[type="checkbox"]:focus {
+    -webkit-box-shadow: 0 0 0 var(--focus);
     box-shadow: 0 0 0 var(--focus);
   }
   .checkbox-wrapper-13 input[type="checkbox"]:not(.switch) {
@@ -395,6 +457,8 @@ input:-internal-autofill-selected {
     border-left: 0;
     left: 7px;
     top: 4px;
+    -webkit-transform: rotate(var(--r, 20deg));
+    -ms-transform: rotate(var(--r, 20deg));
     transform: rotate(var(--r, 20deg));
   }
   .checkbox-wrapper-13 input[type="checkbox"]:not(.switch):checked {
@@ -403,9 +467,11 @@ input:-internal-autofill-selected {
 }
 
 .checkbox-wrapper-13 * {
+  -webkit-box-sizing: inherit;
   box-sizing: inherit;
 }
 .checkbox-wrapper-13 *:before,
 .checkbox-wrapper-13 *:after {
+  -webkit-box-sizing: inherit;
   box-sizing: inherit;
 }
