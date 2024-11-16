@@ -33,6 +33,11 @@
     transition: 0.3s;
     overflow: hidden;
   }
+  menu ul li:hover a::after,
+  menu ul li:hover a {
+    width: 100%;
+    color: #ffffff;
+  }
   menu.show {
     top: 70px;
     visibility: visible;
