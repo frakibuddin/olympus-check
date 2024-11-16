@@ -134,17 +134,32 @@
                                     <img src="img/icon/visible.png" alt="">
                                 </div>
                             </div>
+                            <!-- <div class="input-box">
+                                <input type="date" onload="(this.type='date')"
+                                    onblur="if(!this.value) this.type='text'" />
+                                <label for="c-password" class="label-name">
+                                    <span class="content-name">
+                                        Date of birth
+                                    </span>
+                                </label>
+                                <div class="eye-icon ">
+                                    <img src="img/icon/calendar_month-stroke.png" alt="">
+                                </div>
+                            </div> -->
+
                             <div class="input-box">
-                                <input type="Date" name="date" value="2017-06-01" />
+                                <input type="text" name="date" autocomplete="off" required onfocus="(this.type='date')"
+                                    onblur="if(!this.value) this.type='text'" />
                                 <label for="date" class="label-name">
                                     <span class="content-name">
-
+                                        Date of birth
                                     </span>
                                 </label>
                                 <div class="eye-icon ">
                                     <img src="img/icon/calendar_month-stroke.png" alt="">
                                 </div>
                             </div>
+
                             <div class="input-box">
                                 <input type="text" name="text" autocomplete="off" required />
                                 <label for="text" class="label-name">
