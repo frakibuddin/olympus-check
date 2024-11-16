@@ -283,7 +283,7 @@ menu ul li.active a {
 }
 .btn-blue {
   padding: 15px 10px;
-  background: #28cdd6;
+  background: #1f7378;
   display: inline-block;
   border-radius: 100px;
   width: 100%;
@@ -354,7 +354,10 @@ input:-internal-autofill-selected {
 }
 
 /* check box */
-
+.checkbox-wrapper-13 {
+  display: flex;
+  gap: 8px;
+}
 @supports (-webkit-appearance: none) or (-moz-appearance: none) {
   .checkbox-wrapper-13 input[type="checkbox"] {
     --active: #28cdd6;
