@@ -8,7 +8,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <title>Registration</title>
+    <title>Login Fail</title>
 </head>
 
 <body>
@@ -27,7 +27,7 @@
                         <li><a href="">PT’s</a></li>
                         <li><a href="">FAQ</a></li>
                         <li><a href="">Community</a></li>
-                        <li><a href="">Login</a></li>
+                        <li class="active"><a href="">Login</a></li>
                     </ul>
                 </menu>
             </div>
@@ -73,7 +73,7 @@
             <div class="shadow">
 
             </div>
-            <div class="row align-items-center">
+            <div class="row align-items-end">
                 <div class="col-xl-6 col-lg-12 ">
 
                     <div class="lft-img">
@@ -82,39 +82,23 @@
                 </div>
                 <div class="col-xl-6 col-lg-12 ">
                     <div class="login-frm">
-                        <h2 class="frm-heading">Get started!</h2>
-                        <div class="r-role-check">
-                            <span class="active">Client</span>
-                            <span>Trainer</span>
-                        </div>
+                        <h2 class="frm-heading">Welcome!</h2>
                         <form action="">
                             <div class="input-box">
-                                <input type="text" name="text" autocomplete="off" required />
+                                <input type="text" name="text" autocomplete="off" required value="sample@mail.com" />
                                 <label for="text" class="label-name">
                                     <span class="content-name">
-                                        First name
+                                        Email or username
                                     </span>
                                 </label>
+                                <div class="check-icon ">
+                                    <img src="img/icon/check-ios.png" alt="">
+                                </div>
                             </div>
                             <div class="input-box">
-                                <input type="text" name="text" autocomplete="off" required />
-                                <label for="text" class="label-name">
-                                    <span class="content-name">
-                                        Last name
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="input-box">
-                                <input type="text" name="Email" autocomplete="off" required />
-                                <label for="text" class="label-name">
-                                    <span class="content-name">
-                                        Email address
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="input-box">
+
                                 <input type="password" autocomplete="off" required class="input-password" />
-                                <label for="pwd" class="label-name">
+                                <label for="password" class="label-name">
                                     <span class="content-name">
                                         Password
                                     </span>
@@ -123,46 +107,11 @@
                                     <img src="img/icon/visible.png" alt="">
                                 </div>
                             </div>
-                            <div class="input-box">
-                                <input type="password" autocomplete="off" required class="input-password" />
-                                <label for="c-password" class="label-name">
-                                    <span class="content-name">
-                                        Confirm password
-                                    </span>
-                                </label>
-                                <div class="eye-icon ">
-                                    <img src="img/icon/visible.png" alt="">
-                                </div>
-                            </div>
-                            <div class="input-box">
-                                <input type="Date" name="date" />
-                                <label for="date" class="label-name">
-                                    <span class="content-name">
+                            <a href="#" class="form-link text-end">Forgot your password?</a>
 
-                                    </span>
-                                </label>
-                                <div class="eye-icon ">
-                                    <img src="img/icon/calendar_month-stroke.png" alt="">
-                                </div>
-                            </div>
-                            <div class="input-box">
-                                <input type="text" name="text" autocomplete="off" required />
-                                <label for="text" class="label-name">
-                                    <span class="content-name">
-                                        Referral code
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="agree-check mt-4">
-                                <div class="checkbox-wrapper-13">
-                                    <input id="c1-13" type="checkbox">
-                                    <label for="c1-13">I agree to the Terms and Conditions</label>
-                                </div>
-                            </div>
-                            <button class="btn-blue">Sign Up</button>
-
+                            <button class="btn-blue">Login</button>
                             <p class="form-text">Don’t have an account?
-                                <a href="#" class="form-link"> Login</a>
+                                <a href="#" class="form-link"> Register</a>
                             </p>
                         </form>
                     </div>
