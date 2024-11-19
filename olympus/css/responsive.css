@@ -33,6 +33,11 @@
     transition: 0.3s;
     overflow: hidden;
   }
+  menu ul li:hover a::after,
+  menu ul li:hover a {
+    width: 100%;
+    color: #ffffff;
+  }
   menu.show {
     top: 70px;
     visibility: visible;
@@ -66,7 +71,7 @@
 }
 @media (max-width: 1300px) {
   .lft-img img {
-    width: 95%;
+    /* width: 95%; */
     margin: auto;
   }
 }
@@ -78,13 +83,29 @@
     padding: 20px 30px;
   }
   .login-frm {
-    padding: 45px 35px;
+    padding: 40px 30px;
   }
   .frm-heading {
     margin-bottom: 30px;
+    font-size: 30px;
   }
   .input-box input {
-    padding-top: 32px;
+    padding-top: 25px;
+  }
+  .input-box label {
+    bottom: 18px;
+  }
+  .lft-img {
+    display: none;
+  }
+  .login-frm {
+    width: 95%;
+  }
+  .input-box input {
+    font-size: 16px;
+  }
+  .checkbox-wrapper-13 .c1-13 {
+    font-size: 14px;
   }
 }
 @media (max-width: 400px) {
@@ -102,8 +123,5 @@
   .frm-heading {
     margin-bottom: 20px;
     font-size: 30px;
-  }
-  .login-frm {
-    width: 90%;
   }
 }

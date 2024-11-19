@@ -11,6 +11,9 @@
   .lft-img {
     text-align: center;
   }
+  .lft-img img {
+    width: 132%;
+  }
 }
 @media (max-width: 1300px) {
   .header-wrapper {
@@ -69,10 +72,13 @@
     flex-shrink: 2;
   }
 }
-@media (max-width: 1300px) {
+@media (max-width: 1200px) {
   .lft-img img {
-    /* width: 95%; */
+    width: 95%;
     margin: auto;
+  }
+  .lft-img {
+    display: none;
   }
 }
 @media (max-width: 600px) {
@@ -95,9 +101,7 @@
   .input-box label {
     bottom: 18px;
   }
-  .lft-img {
-    display: none;
-  }
+
   .login-frm {
     width: 95%;
   }
