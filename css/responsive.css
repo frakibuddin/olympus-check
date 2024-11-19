@@ -11,7 +11,7 @@
   .lft-img {
     text-align: center;
   }
-  .lft-img img {
+  .lft-img-reg img {
     width: 132%;
   }
 }
@@ -73,7 +73,7 @@
   }
 }
 @media (max-width: 1200px) {
-  .lft-img img {
+  .lft-img-reg img {
     width: 95%;
     margin: auto;
   }
