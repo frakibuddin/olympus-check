@@ -493,8 +493,9 @@ input[type="date"] {
 }
 input[type="date"]::-webkit-calendar-picker-indicator {
   position: absolute;
-  right: 22px;
-  top: 32px;
+  right: 10px;
+  top: 15px;
   z-index: 99;
-  color: red;
+
+  padding: 15px;
 }
