@@ -491,3 +491,10 @@ input[type="date"] {
   font-size: 18px;
   border-radius: 8px;
 }
+input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  right: 22px;
+  top: 32px;
+  z-index: 99;
+  color: red;
+}
