@@ -26,3 +26,30 @@ eye_icon.forEach((e, n) => {
     }
   };
 });
+
+// tab
+let client_tab = document.querySelector(".client-tab");
+let trainer_tab = document.querySelector(".trainer-tab");
+let client_frm = document.querySelector(".client-frm");
+let trainer_frm = document.querySelector(".trainer-frm");
+
+client_tab.onclick = () => {
+  if (trainer_frm.classList.contains("active")) {
+    client_tab.classList.add("active");
+    trainer_tab.classList.remove("active");
+
+    trainer_frm.classList.add("hide");
+    client_frm.classList.add("active");
+    client_frm.classList.remove("hide");
+  }
+};
+trainer_tab.onclick = () => {
+  if (client_frm.classList.contains("active")) {
+    trainer_tab.classList.add("active");
+    client_tab.classList.remove("active");
+
+    client_frm.classList.add("hide");
+    trainer_frm.classList.add("active");
+    trainer_frm.classList.remove("hide");
+  }
+};

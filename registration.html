@@ -84,90 +84,168 @@
                     <div class="login-frm">
                         <h2 class="frm-heading">Get started! </h2>
                         <div class="r-role-check">
-                            <span class="active">Client</span>
-                            <span>Trainer</span>
+                            <span class="client-tab active">Client</span>
+                            <span class="trainer-tab">Trainer</span>
                         </div>
-                        <form action="">
-                            <div class="input-box">
-                                <input type="text" name="text" autocomplete="off" required />
-                                <label for="text" class="label-name">
-                                    <span class="content-name">
-                                        First name
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="input-box">
-                                <input type="text" name="text" autocomplete="off" required />
-                                <label for="text" class="label-name">
-                                    <span class="content-name">
-                                        Last name
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="input-box">
-                                <input type="text" name="Email" autocomplete="off" required />
-                                <label for="text" class="label-name">
-                                    <span class="content-name">
-                                        Email address
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="input-box">
-                                <input type="password" autocomplete="off" required class="input-password" />
-                                <label for="pwd" class="label-name">
-                                    <span class="content-name">
-                                        Password
-                                    </span>
-                                </label>
-                                <div class="eye-icon ">
-                                    <img src="img/icon/visible.png" alt="">
+                        <div class="frm-inner">
+                            <form action="" class="frm client-frm active">
+                                <div class="input-box">
+                                    <input type="text" name="text" autocomplete="off" required />
+                                    <label for="text" class="label-name">
+                                        <span class="content-name">
+                                            Name
+                                        </span>
+                                    </label>
                                 </div>
-                            </div>
-                            <div class="input-box">
-                                <input type="password" autocomplete="off" required class="input-password" />
-                                <label for="c-password" class="label-name">
-                                    <span class="content-name">
-                                        Confirm password
-                                    </span>
-                                </label>
-                                <div class="eye-icon ">
-                                    <img src="img/icon/visible.png" alt="">
-                                </div>
-                            </div>
 
-                            <div class="input-box">
-                                <input type="text" name="date" autocomplete="off" required onfocus="(this.type='date')"
-                                    onblur="if(!this.value) this.type='text'" />
-                                <label for="date" class="label-name">
-                                    <span class="content-name">
-                                        Date of birth
-                                    </span>
-                                </label>
-                                <div class="eye-icon ">
-                                    <img src="img/icon/calendar_month-stroke.png" alt="">
+                                <div class="input-box">
+                                    <input type="text" name="Email" autocomplete="off" required />
+                                    <label for="text" class="label-name">
+                                        <span class="content-name">
+                                            Email address
+                                        </span>
+                                    </label>
                                 </div>
-                            </div>
-
-                            <div class="input-box">
-                                <input type="text" name="text" autocomplete="off" required />
-                                <label for="text" class="label-name">
-                                    <span class="content-name">
-                                        Referral code
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="agree-check mt-4">
-                                <div class="checkbox-wrapper-13">
-                                    <input id="c1-13" type="checkbox">
-                                    <label for="c1-13">I agree to the Terms and Conditions</label>
+                                <div class="input-box">
+                                    <input type="password" autocomplete="off" required class="input-password" />
+                                    <label for="pwd" class="label-name">
+                                        <span class="content-name">
+                                            Password
+                                        </span>
+                                    </label>
+                                    <div class="eye-icon ">
+                                        <img src="img/icon/visible.png" alt="">
+                                    </div>
                                 </div>
-                            </div>
-                            <button class="btn-blue">Register</button>
+                                <div class="input-box">
+                                    <input type="password" autocomplete="off" required class="input-password" />
+                                    <label for="c-password" class="label-name">
+                                        <span class="content-name">
+                                            Confirm password
+                                        </span>
+                                    </label>
+                                    <div class="eye-icon ">
+                                        <img src="img/icon/visible.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="input-box">
+                                    <input type="text" name="text" autocomplete="off" required />
+                                    <label for="text" class="label-name">
+                                        <span class="content-name">
+                                            Referral code (optional)
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="agree-check mt-4">
+                                    <div class="checkbox-wrapper-13">
+                                        <input id="c1-13" type="checkbox">
+                                        <label for="c1-13">I agree to the Terms and Conditions</label>
+                                    </div>
+                                </div>
+                                <button class="btn-blue">Register</button>
+                                <div class="social-login">
+                                    <div class="line"></div>
+                                    <div>Or</div>
+                                    <div class="line"></div>
+                                </div>
+                                <div class="social-login-btns">
+                                    <a href="" class="social-login-btn">
+                                        <img src="img/icon/google.png" alt="">
+                                        <span>Sign up with Google</span>
+                                    </a>
+                                    <a href="" class="social-login-btn">
+                                        <img src="img/icon/apple.png" alt="">
+                                        <span>Sign up with Apple</span>
+                                    </a>
+                                    <a href="" class="social-login-btn">
+                                        <img src="img/icon/facebook.png" alt="">
+                                        <span>Sign up with Facebook</span>
+                                    </a>
+                                </div>
+                                <p class="form-text">Already have an account?
+                                    <a href="#" class="form-link"> Login</a>
+                                </p>
+                            </form>
+                            <form action="" class="frm trainer-frm ">
 
-                            <p class="form-text">Already have an account?
-                                <a href="#" class="form-link"> Login</a>
-                            </p>
-                        </form>
+                                <div class="input-box">
+                                    <input type="text" name="text" autocomplete="off" required />
+                                    <label for="text" class="label-name">
+                                        <span class="content-name">
+                                            Name
+                                        </span>
+                                    </label>
+                                </div>
+
+                                <div class="input-box">
+                                    <input type="text" name="Email" autocomplete="off" required />
+                                    <label for="text" class="label-name">
+                                        <span class="content-name">
+                                            Email address
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="input-box">
+                                    <input type="password" autocomplete="off" required class="input-password" />
+                                    <label for="pwd" class="label-name">
+                                        <span class="content-name">
+                                            Password
+                                        </span>
+                                    </label>
+                                    <div class="eye-icon ">
+                                        <img src="img/icon/visible.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="input-box">
+                                    <input type="password" autocomplete="off" required class="input-password" />
+                                    <label for="c-password" class="label-name">
+                                        <span class="content-name">
+                                            Confirm password
+                                        </span>
+                                    </label>
+                                    <div class="eye-icon ">
+                                        <img src="img/icon/visible.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="input-box">
+                                    <input type="text" name="text" autocomplete="off" required />
+                                    <label for="text" class="label-name">
+                                        <span class="content-name">
+                                            Referral code (optional)
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="agree-check mt-4">
+                                    <div class="checkbox-wrapper-13">
+                                        <input id="c1-13" type="checkbox">
+                                        <label for="c1-13">I agree to the Terms and Conditions</label>
+                                    </div>
+                                </div>
+                                <button class="btn-blue">Register</button>
+                                <div class="social-login">
+                                    <div class="line"></div>
+                                    <div>Or</div>
+                                    <div class="line"></div>
+                                </div>
+                                <div class="social-login-btns">
+                                    <a href="" class="social-login-btn">
+                                        <img src="img/icon/google.png" alt="">
+                                        <span>Sign up with Google</span>
+                                    </a>
+                                    <a href="" class="social-login-btn">
+                                        <img src="img/icon/apple.png" alt="">
+                                        <span>Sign up with Apple</span>
+                                    </a>
+                                    <a href="" class="social-login-btn">
+                                        <img src="img/icon/facebook.png" alt="">
+                                        <span>Sign up with Facebook</span>
+                                    </a>
+                                </div>
+                                <p class="form-text">Already have an account?
+                                    <a href="#" class="form-link"> Login</a>
+                                </p>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

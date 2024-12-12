@@ -2,7 +2,7 @@
   .login-frm {
     width: 80%;
     margin: auto;
-    height: auto;
+    max-height: 800px;
     border-radius: 25px;
     padding: 80px 55px;
     margin-top: 50px;
