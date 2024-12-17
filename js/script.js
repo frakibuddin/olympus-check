@@ -33,23 +33,71 @@ let trainer_tab = document.querySelector(".trainer-tab");
 let client_frm = document.querySelector(".client-frm");
 let trainer_frm = document.querySelector(".trainer-frm");
 
-client_tab.onclick = () => {
-  if (trainer_frm.classList.contains("active")) {
-    client_tab.classList.add("active");
-    trainer_tab.classList.remove("active");
+if (client_tab) {
+  client_tab.onclick = () => {
+    if (trainer_frm.classList.contains("active")) {
+      client_tab.classList.add("active");
+      trainer_tab.classList.remove("active");
 
-    trainer_frm.classList.add("hide");
-    client_frm.classList.add("active");
-    client_frm.classList.remove("hide");
-  }
-};
-trainer_tab.onclick = () => {
-  if (client_frm.classList.contains("active")) {
-    trainer_tab.classList.add("active");
-    client_tab.classList.remove("active");
+      trainer_frm.classList.add("hide");
+      client_frm.classList.add("active");
+      client_frm.classList.remove("hide");
+    }
+  };
+}
 
-    client_frm.classList.add("hide");
-    trainer_frm.classList.add("active");
-    trainer_frm.classList.remove("hide");
-  }
+if (trainer_tab) {
+  trainer_tab.onclick = () => {
+    if (client_frm.classList.contains("active")) {
+      trainer_tab.classList.add("active");
+      client_tab.classList.remove("active");
+
+      client_frm.classList.add("hide");
+      trainer_frm.classList.add("active");
+      trainer_frm.classList.remove("hide");
+    }
+  };
+}
+
+// multi stap form
+const slidePage = document.querySelector(".slidePage");
+const firstNextBtn = document.querySelector(".next-1");
+const secondNextBtn = document.querySelector(".next-2");
+const progress_bar = document.querySelector(".progress-bar div");
+const back_icon = document.querySelector(".back-icon");
+
+if (firstNextBtn) {
+  firstNextBtn.onclick = () => {
+    slidePage.style.marginLeft = "-25%";
+    progress_bar.style.width = "100%";
+    back_icon.style.opacity = "1";
+  };
+}
+if (back_icon) {
+  back_icon.onclick = () => {
+    slidePage.style.marginLeft = "0";
+    progress_bar.style.width = "50%";
+    back_icon.style.opacity = "0";
+  };
+}
+
+// choose file function
+const chooseFileBtn = document.querySelector(".chooseFileBtn");
+const FileInput = document.querySelector(".FileInput");
+const choose_file_area = document.querySelector(".choose-file-area img");
+let file;
+chooseFileBtn.onclick = () => {
+  FileInput.click();
 };
+
+FileInput.addEventListener("change", function () {
+  file = this.files[0];
+  let fileReader = new FileReader();
+  fileReader.onload = () => {
+    let fileUrl = fileReader.result;
+    // choose_file_area.innerHTML = `<img src="${fileUrl}"/>`;
+    choose_file_area.src = fileUrl;
+    choose_file_area.style.width = "100%";
+  };
+  fileReader.readAsDataURL(file);
+});

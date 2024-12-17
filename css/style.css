@@ -63,6 +63,9 @@ ol,
 ul {
   padding-left: 0;
 }
+hr {
+  color: #353939;
+}
 .header-search-bar.search-open {
   top: 0;
   -webkit-transform: translateY(0);
@@ -175,12 +178,14 @@ menu ul li.active a {
   backdrop-filter: blur(20px);
   background: #0e0e0e;
   width: 680px;
+  margin: auto;
   max-height: 800px;
   overflow-y: scroll;
   border-radius: 25px;
-  padding: 80px 115px;
+  padding: 80px 105px;
   margin-top: 80px;
   margin-bottom: 130px;
+  position: relative;
 }
 .login-frm::-webkit-scrollbar {
   background: #1e1f1f;
@@ -195,9 +200,26 @@ menu ul li.active a {
   line-height: 140%;
   text-align: center;
   color: #fff;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
-
+.frm-heading-small {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 140%;
+  text-align: center;
+  color: #f4f9f9;
+  margin-bottom: 55px;
+}
+.title {
+  color: #f4f9f9;
+  font-size: 20px;
+  font-weight: 700;
+}
+.sub-title {
+  color: #8e9393;
+  font-size: 16px;
+  font-weight: 500;
+}
 /*  */
 .input-box {
   position: relative;
@@ -519,7 +541,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .social-login .line {
   height: 1px;
   width: 100%;
-  background: linear-gradient(#151919, #353939);
+  background: linear-gradient(90deg, #151919, #353939bb);
+  border-radius: 10px;
+}
+.social-login .line.line2 {
+  background: linear-gradient(275deg, #151919, #353939bb) !important;
 }
 .social-login-btns .social-login-btn {
   height: 55px;
@@ -588,4 +614,116 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   100% {
     opacity: 0;
   }
+}
+
+/* registration-client-default */
+.progress-bar {
+  width: 100%;
+  height: 3px;
+  background: #353939;
+  position: relative;
+}
+.progress-bar div {
+  margin-right: auto;
+  width: 50%;
+  height: 3px;
+  background: #28cdd6;
+  transition: 0.3s;
+}
+.btn-disabled {
+  background: #28cdd671;
+}
+.btn-disabled:hover {
+  background: #28cdd671;
+}
+/* multy stap from style */
+.multi-frm-outer {
+  width: 100%;
+  overflow: hidden;
+}
+.multi-frm-outer form {
+  display: flex;
+  width: 400%;
+}
+.multi-frm-outer form .page {
+  width: 25%;
+  transition: margin-left 0.3s ease-in-out;
+}
+.back-icon {
+  position: absolute;
+  top: 11%;
+  left: 16%;
+  opacity: 0;
+}
+.tag-items a {
+  text-decoration: none;
+  color: #8e9393;
+  font-weight: 600;
+  background: #151919;
+  border-radius: 100px;
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 6px 2px;
+  transition: 0.3s;
+}
+.tag-items a:hover {
+  color: #28cdd6;
+  background: #28cdd633;
+}
+.tag-items a.active {
+  color: #28cdd6;
+  background: #28cdd633;
+}
+/* Trineer More Info Default */
+.add-new-link span {
+  color: #28cdd6;
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 5px;
+  cursor: pointer;
+  user-select: none;
+}
+.delete-new-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.delete-new-link span {
+  color: #ff6b42;
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 5px;
+  cursor: pointer;
+  user-select: none;
+}
+.choose-file-area {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: #151919;
+  margin: 70px auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.choose-file-area img {
+  width: 30%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+.choose-file-area button {
+  width: 52px;
+  height: 52px;
+  background: #28cdd6;
+  border: 0;
+  outline: 0;
+  color: #151919;
+  font-size: 50px;
+  line-height: 52px;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
