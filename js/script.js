@@ -63,6 +63,7 @@ if (trainer_tab) {
 const slidePage = document.querySelector(".slidePage");
 const firstNextBtn = document.querySelector(".next-1");
 const secondNextBtn = document.querySelector(".next-2");
+const thirdNextBtn = document.querySelector(".next-3");
 const progress_bar = document.querySelector(".progress-bar div");
 const back_icon = document.querySelector(".back-icon");
 
@@ -81,23 +82,138 @@ if (back_icon) {
   };
 }
 
+//
+const nx1 = document.querySelector(".nx-1");
+const nx2 = document.querySelector(".nx-2");
+const nx3 = document.querySelector(".nx-3");
+
+if (nx1) {
+  nx1.onclick = () => {
+    slidePage.style.marginLeft = "-25%";
+    progress_bar.style.width = "75%";
+    back_icon.style.opacity = "1";
+  };
+}
+
+if (nx2) {
+  nx2.onclick = () => {
+    slidePage.style.marginLeft = "-50%";
+    progress_bar.style.width = "100%";
+    back_icon.style.opacity = "1";
+  };
+}
+
 // choose file function
-const chooseFileBtn = document.querySelector(".chooseFileBtn");
-const FileInput = document.querySelector(".FileInput");
+const chooseFileBtn = document.querySelectorAll(".chooseFileBtn");
+const FileInput = document.querySelectorAll(".FileInput");
 const choose_file_area = document.querySelector(".choose-file-area img");
 let file;
-chooseFileBtn.onclick = () => {
-  FileInput.click();
-};
 
-FileInput.addEventListener("change", function () {
-  file = this.files[0];
-  let fileReader = new FileReader();
-  fileReader.onload = () => {
-    let fileUrl = fileReader.result;
-    // choose_file_area.innerHTML = `<img src="${fileUrl}"/>`;
-    choose_file_area.src = fileUrl;
-    choose_file_area.style.width = "100%";
+chooseFileBtn.forEach((e, i) => {
+  chooseFileBtn[i].onclick = () => {
+    FileInput[i].click();
   };
-  fileReader.readAsDataURL(file);
 });
+if (FileInput[0]) {
+  FileInput[0].addEventListener("change", function () {
+    file = this.files[0];
+    let fileReader = new FileReader();
+    fileReader.onload = () => {
+      let fileUrl = fileReader.result;
+      // choose_file_area.innerHTML = `<img src="${fileUrl}"/>`;
+      choose_file_area.src = fileUrl;
+      choose_file_area.style.width = "100%";
+    };
+    fileReader.readAsDataURL(file);
+  });
+}
+
+// select-year-box
+let select_year_box = document.querySelector(".select-year-box");
+let select_box = document.querySelector(".select-box");
+let select_year_box_close = document.querySelector(".select-year-box-close");
+
+if (select_year_box_close) {
+  select_year_box_close.onclick = () => {
+    select_box.classList.add("hide");
+  };
+}
+if (select_year_box) {
+  select_year_box.onclick = () => {
+    select_box.classList.remove("hide");
+  };
+}
+
+// sliderList
+const sliderList = document.getElementById("year-list");
+const slider = document.getElementById("slider");
+const input_select_year = document.querySelector(".input-select-year");
+
+let currentIndex = 3; // Default active index for '4'
+let isDragging = false;
+let startY = 0;
+let currentY = 0;
+
+// Update slider position and active class
+function updateSlider() {
+  const items = document.querySelectorAll("#year-list li");
+  items.forEach((item, index) => {
+    item.classList.remove("active");
+    if (index === currentIndex) {
+      item.classList.add("active");
+    }
+  });
+  sliderList.style.transform = `translateY(-${(currentIndex - 3) * 40}px)`;
+}
+
+// Handle drag start
+
+slider.addEventListener("mousedown", (e) => {
+  isDragging = true;
+  startY = e.clientY;
+  slider.style.cursor = "grabbing";
+});
+
+slider.addEventListener("mousemove", (e) => {
+  if (!isDragging) return;
+  currentY = e.clientY - startY;
+
+  if (currentY > 40 && currentIndex > 0) {
+    currentIndex--;
+    startY = e.clientY;
+    currentY = 0;
+  } else if (currentY < -40 && currentIndex < 6) {
+    currentIndex++;
+    startY = e.clientY;
+    currentY = 0;
+  }
+  updateSlider();
+});
+
+// End dragging
+window.addEventListener("mouseup", () => {
+  isDragging = false;
+  slider.style.cursor = "grab";
+});
+
+// Handle mouse scroll
+slider.addEventListener("wheel", (e) => {
+  if (e.deltaY > 0) {
+    // Scroll Down
+    if (currentIndex < 6) currentIndex++;
+  } else {
+    // Scroll Up
+    if (currentIndex > 0) currentIndex--;
+  }
+  updateSlider();
+});
+
+// Handle year selection
+function selectYear() {
+  const selectedYear = document.querySelector("#year-list li.active").innerText;
+  input_select_year.value = selectedYear;
+  select_box.classList.add("hide");
+  // alert("Selected Year: " + selectedYear);
+}
+
+updateSlider(); // Initialize the slider

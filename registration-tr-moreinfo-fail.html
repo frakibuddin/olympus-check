@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css'
+        rel='stylesheet'>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <title>Trineer More Info Default</title>
@@ -89,20 +91,44 @@
                             <div></div>
                         </div>
 
-
-
                         <div class="multi-frm-outer">
                             <form action="#" class="multi-form">
                                 <div class="page slidePage">
+                                    <div class="select-box hide">
+                                        <button type="button" class="select-year-box-close">×</button>
+                                        <span class="drag-line"></span>
+                                        <div class="slider-container">
+                                            <h2 class="sub-title mb-5">Select Years</h2>
+                                            <div class="slider" id="slider">
+                                                <ul id="year-list">
+                                                    <li>1</li>
+                                                    <li>2</li>
+                                                    <li>3</li>
+                                                    <li class="active">4</li>
+                                                    <li>5</li>
+                                                    <li>6</li>
+                                                    <li>8</li>
+                                                    <li>9</li>
+                                                    <li>10</li>
+                                                </ul>
+                                            </div>
+                                            <button type="button" class="btn-blue mt-5"
+                                                onclick="selectYear()">Select</button>
+                                        </div>
+                                    </div>
                                     <h3 class="title mb-2 mt-5">Like to hear more from you!</h3>
                                     <p class="sub-title">This is the subtitle and feel free to use it...</p>
-                                    <div class="input-box">
-                                        <input type="text" name="text" autocomplete="off" required />
-                                        <label for="text" class="label-name">
+                                    <div class="input-box select-year-box">
+                                        <input type="text" value="Select years of experience" autocomplete="off"
+                                            required class="input-password input-select-year" />
+                                        <label for="pwd" class="label-name">
                                             <span class="content-name">
-                                                Phone number
+
                                             </span>
                                         </label>
+                                        <div class="check-icon ">
+                                            <img src="img/icon/Arrow.png" alt="">
+                                        </div>
                                     </div>
                                     <h3 class="title mb-4 mt-5">Training locations</h3>
 
@@ -180,7 +206,7 @@
                                         <a href="">Motivation and Accountability</a>
                                     </div>
 
-                                    <button class="btn-blue next-1">Next</button>
+                                    <button type="button" class="btn-blue nx-1">Next</button>
                                 </div>
                                 <div class="page">
                                     <div class="back-icon">
@@ -196,8 +222,107 @@
                                     </div>
 
 
-                                    <button class="btn-blue next-1">Next</button>
-                                    <button class="sub-title text-center text-decoration-none d-block">Skip for
+                                    <button type="button" class="btn-blue nx-2">Next</button>
+                                    <button class="sub-title text-center m-auto text-decoration-none d-block">Skip for
+                                        now</button>
+                                </div>
+                                <div class="page">
+
+                                    <h3 class="title mb-2 mt-5">Like to hear more from you!</h3>
+                                    <p class="sub-title">This is the subtitle and feel free to use it...</p>
+
+                                    <h3 class="title mb-4 mt-5">Insurance </h3>
+
+                                    <div class="input-box">
+                                        <input type="text" name="text" autocomplete="off" required />
+                                        <label for="text" class="label-name">
+                                            <span class="content-name">
+                                                Title
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="input-box">
+                                        <input type="text" autocomplete="off" id="my_date_picker" required
+                                            class="input-password" />
+                                        <label for="pwd" class="label-name">
+                                            <span class="content-name">
+                                                Valid up to
+                                            </span>
+                                        </label>
+                                        <div class="check-icon">
+                                            <img src="img/icon/calendar_month-android.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="input-box">
+                                        <input type="file" class="FileInput" hidden>
+                                        <input type="text" autocomplete="off" id="my_date_picker" required
+                                            class="input-password" />
+                                        <label for="pwd" class="label-name">
+                                            <span class="content-name">
+                                                Attach file
+                                            </span>
+                                        </label>
+                                        <div class="check-icon chooseFileBtn">
+                                            <img src="img/icon/attach.png" alt="">
+                                        </div>
+                                    </div>
+                                    <h3 class="title mb-4 mt-5">DBS </h3>
+                                    <div class="input-box">
+                                        <input type="file" class="FileInput" hidden>
+                                        <input type="text" autocomplete="off" id="my_date_picker" required
+                                            class="input-password" />
+                                        <label for="pwd" class="label-name">
+                                            <span class="content-name">
+                                                Attach file
+                                            </span>
+                                        </label>
+                                        <div class="check-icon chooseFileBtn">
+                                            <img src="img/icon/attach.png" alt="">
+                                        </div>
+                                    </div>
+
+
+                                    <h3 class="title mb-4 mt-5">Qualifications </h3>
+                                    <div class="input-box">
+                                        <input type="text" name="text" autocomplete="off" required />
+                                        <label for="text" class="label-name">
+                                            <span class="content-name">
+                                                Title
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="input-box">
+                                        <input type="text" autocomplete="off" id="my_date_picker" required
+                                            class="input-password" />
+                                        <label for="pwd" class="label-name">
+                                            <span class="content-name">
+                                                Valid up to
+                                            </span>
+                                        </label>
+                                        <div class="check-icon">
+                                            <img src="img/icon/calendar_month-android.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="input-box">
+                                        <input type="file" class="FileInput" hidden>
+                                        <input type="text" autocomplete="off" id="my_date_picker" required
+                                            class="input-password" />
+                                        <label for="pwd" class="label-name">
+                                            <span class="content-name">
+                                                Attach file
+                                            </span>
+                                        </label>
+                                        <div class="check-icon chooseFileBtn">
+                                            <img src="img/icon/attach.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="add-new-link pt-1 pb-3">
+                                        <img src="img/icon/plus-ios.png" alt="">
+                                        <span>Add new training location</span>
+                                    </div>
+
+                                    <button type="button" class="btn-blue nx-3 btn-disabled" disabled>Complete</button>
+                                    <button class="sub-title text-center m-auto text-decoration-none d-block">Skip for
                                         now</button>
                                 </div>
                             </form>
@@ -211,7 +336,23 @@
             <p>&copy; 2024 OLYMPUS FITAPP™.All Rights Reserved.</p>
         </footer>
     </section>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js">
+    </script>
     <script src="js/script.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $(function () {
+                $("#my_date_picker").
+                    datepicker();
+            });
+        }) 
+    </script>
 </body>
 
 </html>

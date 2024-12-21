@@ -140,11 +140,55 @@
                                     <div class="row text-center">
                                         <div class="col-xl-6">
                                             <img src="img/bog-body.png" alt="">
-                                            <p class="sub-title my-4">Current weight</p>
+
+                                            <div class="scale-slider-container">
+                                                <p class="label sub-title my-4">Current weight</p>
+                                                <div class="weight-display">
+                                                    <span id="weight-value">96</span> kg
+                                                </div>
+                                                <div class="scale-slider-wrapper">
+                                                    <div class="scale">
+                                                        <div class="tick"></div>
+                                                        <div class="tick"></div>
+                                                        <div class="tick"></div>
+                                                        <div class="tick"></div>
+                                                        <div class="tick"></div>
+                                                        <div class="tick"></div>
+                                                        <div class="tick"></div>
+                                                        <div class="tick"></div>
+                                                        <div class="tick"></div>
+                                                        <div class="tick active"></div>
+                                                    </div>
+                                                    <input type="range" id="weight-slider" min="50" max="150" value="96"
+                                                        step="1">
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="col-xl-6">
                                             <img src="img/small-body.png" alt="">
-                                            <p class="sub-title my-4">Target weight</p>
+
+                                            <!-- <div class="scale-slider-container">
+                                                <p class="label sub-title my-4">Target weight</p>
+                                                <div class="weight-display">
+                                                    <span id="weight-value">96</span> kg
+                                                </div>
+                                                <div class="scale-slider-wrapper">
+                                                    <div class="scale">
+                                                        <div class="tick"></div>
+                                                        <div class="tick"></div>
+                                                        <div class="tick"></div>
+                                                        <div class="tick"></div>
+                                                        <div class="tick"></div>
+                                                        <div class="tick"></div>
+                                                        <div class="tick"></div>
+                                                        <div class="tick"></div>
+                                                        <div class="tick"></div>
+                                                        <div class="tick active"></div>
+                                                    </div>
+                                                    <input type="range" id="weight-slider" min="50" max="150" value="96"
+                                                        step="1">
+                                                </div>
+                                            </div> -->
                                         </div>
                                     </div>
 
@@ -162,6 +206,33 @@
             <p>&copy; 2024 OLYMPUS FITAPP™.All Rights Reserved.</p>
         </footer>
     </section>
+    <script>
+        // scale bar funtion
+        const scale_slider = document.getElementById("weight-slider");
+        const weightValue = document.getElementById("weight-value");
+        const ticks = document.querySelectorAll(".tick");
+
+        scale_slider.addEventListener("input", () => {
+            // Update the weight value
+            weightValue.textContent = scale_slider.value;
+
+            // Highlight the active tick
+            const totalTicks = ticks.length;
+            const step = (scale_slider.max - scale_slider.min) / (totalTicks - 1);
+            const activeIndex = Math.round(
+                (scale_slider.value - scale_slider.min) / step
+            );
+
+            ticks.forEach((tick, index) => {
+                if (index === activeIndex) {
+                    tick.classList.add("active");
+                } else {
+                    tick.classList.remove("active");
+                }
+            });
+        });
+
+    </script>
     <script src="js/script.js"></script>
 </body>
 
