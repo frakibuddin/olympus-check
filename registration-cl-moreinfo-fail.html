@@ -167,28 +167,28 @@
                                         <div class="col-xl-6">
                                             <img src="img/small-body.png" alt="">
 
-                                            <!-- <div class="scale-slider-container">
+                                            <div class="scale-slider-container">
                                                 <p class="label sub-title my-4">Target weight</p>
                                                 <div class="weight-display">
-                                                    <span id="weight-value">96</span> kg
+                                                    <span id="weight-value2">96</span> kg
                                                 </div>
                                                 <div class="scale-slider-wrapper">
                                                     <div class="scale">
-                                                        <div class="tick"></div>
-                                                        <div class="tick"></div>
-                                                        <div class="tick"></div>
-                                                        <div class="tick"></div>
-                                                        <div class="tick"></div>
-                                                        <div class="tick"></div>
-                                                        <div class="tick"></div>
-                                                        <div class="tick"></div>
-                                                        <div class="tick"></div>
-                                                        <div class="tick active"></div>
+                                                        <div class="tick2"></div>
+                                                        <div class="tick2"></div>
+                                                        <div class="tick2"></div>
+                                                        <div class="tick2"></div>
+                                                        <div class="tick2"></div>
+                                                        <div class="tick2"></div>
+                                                        <div class="tick2"></div>
+                                                        <div class="tick2"></div>
+                                                        <div class="tick2"></div>
+                                                        <div class="tick2 active"></div>
                                                     </div>
-                                                    <input type="range" id="weight-slider" min="50" max="150" value="96"
-                                                        step="1">
+                                                    <input type="range" id="weight-slider2" min="50" max="150"
+                                                        value="96" step="1">
                                                 </div>
-                                            </div> -->
+                                            </div>
                                         </div>
                                     </div>
 
@@ -209,10 +209,14 @@
     <script>
         // scale bar funtion
         const scale_slider = document.getElementById("weight-slider");
+
         const weightValue = document.getElementById("weight-value");
+
         const ticks = document.querySelectorAll(".tick");
 
+
         scale_slider.addEventListener("input", () => {
+
             // Update the weight value
             weightValue.textContent = scale_slider.value;
 
@@ -228,6 +232,34 @@
                     tick.classList.add("active");
                 } else {
                     tick.classList.remove("active");
+                }
+            });
+        });
+        // two
+        const scale_slider2 = document.getElementById("weight-slider2");
+        const weightValue2 = document.getElementById("weight-value2");
+        const ticks2 = document.querySelectorAll(".tick2");
+
+        scale_slider2.onclick = () => {
+            alert()
+        }
+        scale_slider2.addEventListener("input", () => {
+            alert()
+            // Update the weight value
+            weightValue2.textContent = scale_slider2.value;
+
+            // Highlight the active tick
+            const totalTicks = ticks2.length;
+            const step = (scale_slider2.max - scale_slider2.min) / (totalTicks - 1);
+            const activeIndex = Math.round(
+                (scale_slider2.value - scale_slider2.min) / step
+            );
+
+            ticks2.forEach((tick2, index2) => {
+                if (index2 === activeIndex) {
+                    tick2.classList.add("active");
+                } else {
+                    tick2.classList.remove("active");
                 }
             });
         });

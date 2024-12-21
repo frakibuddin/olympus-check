@@ -839,7 +839,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 /* Weight display */
 .weight-display {
-  font-size: 2.5rem;
+  font-size: 18px;
+  font-weight: 600;
   color: #4bc0c8;
   margin: 10px 0;
 }
@@ -865,19 +866,22 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   justify-content: space-between;
 }
 
-.tick {
+.tick,
+.tick2 {
   width: 2px;
   height: 16px;
   background-color: #555;
 }
 
-.tick.active {
+.tick.active,
+.tick2.active {
   background-color: #4bc0c8;
   height: 24px;
 }
 
 /* Slider input */
-#weight-slider {
+#weight-slider,
+#weight-slider2 {
   position: absolute;
   top: 50%;
   left: 0;
