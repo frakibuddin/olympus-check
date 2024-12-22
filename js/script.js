@@ -167,53 +167,56 @@ function updateSlider() {
 }
 
 // Handle drag start
-
-slider.addEventListener("mousedown", (e) => {
-  isDragging = true;
-  startY = e.clientY;
-  slider.style.cursor = "grabbing";
-});
-
-slider.addEventListener("mousemove", (e) => {
-  if (!isDragging) return;
-  currentY = e.clientY - startY;
-
-  if (currentY > 40 && currentIndex > 0) {
-    currentIndex--;
+if (slider) {
+  slider.addEventListener("mousedown", (e) => {
+    isDragging = true;
     startY = e.clientY;
-    currentY = 0;
-  } else if (currentY < -40 && currentIndex < 6) {
-    currentIndex++;
-    startY = e.clientY;
-    currentY = 0;
+    slider.style.cursor = "grabbing";
+  });
+
+  slider.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
+    currentY = e.clientY - startY;
+
+    if (currentY > 40 && currentIndex > 0) {
+      currentIndex--;
+      startY = e.clientY;
+      currentY = 0;
+    } else if (currentY < -40 && currentIndex < 6) {
+      currentIndex++;
+      startY = e.clientY;
+      currentY = 0;
+    }
+    updateSlider();
+  });
+
+  // End dragging
+  window.addEventListener("mouseup", () => {
+    isDragging = false;
+    slider.style.cursor = "grab";
+  });
+
+  // Handle mouse scroll
+  slider.addEventListener("wheel", (e) => {
+    if (e.deltaY > 0) {
+      // Scroll Down
+      if (currentIndex < 6) currentIndex++;
+    } else {
+      // Scroll Up
+      if (currentIndex > 0) currentIndex--;
+    }
+    updateSlider();
+  });
+
+  // Handle year selection
+  function selectYear() {
+    const selectedYear = document.querySelector(
+      "#year-list li.active"
+    ).innerText;
+    input_select_year.value = selectedYear;
+    select_box.classList.add("hide");
+    // alert("Selected Year: " + selectedYear);
   }
-  updateSlider();
-});
 
-// End dragging
-window.addEventListener("mouseup", () => {
-  isDragging = false;
-  slider.style.cursor = "grab";
-});
-
-// Handle mouse scroll
-slider.addEventListener("wheel", (e) => {
-  if (e.deltaY > 0) {
-    // Scroll Down
-    if (currentIndex < 6) currentIndex++;
-  } else {
-    // Scroll Up
-    if (currentIndex > 0) currentIndex--;
-  }
-  updateSlider();
-});
-
-// Handle year selection
-function selectYear() {
-  const selectedYear = document.querySelector("#year-list li.active").innerText;
-  input_select_year.value = selectedYear;
-  select_box.classList.add("hide");
-  // alert("Selected Year: " + selectedYear);
+  updateSlider(); // Initialize the slider
 }
-
-updateSlider(); // Initialize the slider
