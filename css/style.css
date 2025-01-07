@@ -184,7 +184,7 @@ menu ul li.active a {
   border-radius: 25px;
   padding: 80px 105px;
   margin-top: 80px;
-  margin-bottom: 130px;
+  margin-bottom: 50px;
   position: relative;
 }
 .login-frm::-webkit-scrollbar {
