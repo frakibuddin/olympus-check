@@ -973,3 +973,29 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   box-shadow: inset 0px 0px 20px 4px #28cdd6a4 !important;
   background: #151919 !important;
 }
+
+/* icon-inner */
+.icon-inner {
+  position: relative;
+}
+.icon-popup {
+  width: 250px;
+  height: 74px;
+  border-radius: 8px;
+  border: 3px solid #28cdd6;
+  background: #28cdd675;
+  color: #fff;
+  padding: 10px;
+  position: absolute;
+  left: -142px;
+  bottom: -113px;
+  /* display: none; */
+}
+.icon-popup .icon-popup-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+}
+.profile-img.rounded-circle {
+  width: 30px;
+}

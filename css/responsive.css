@@ -114,6 +114,12 @@
   .checkbox-wrapper-13 .c1-13 {
     font-size: 14px;
   }
+  .title {
+    margin-top: 20px;
+  }
+  .gym-img-inner span {
+    padding: 26px;
+  }
 }
 @media (max-width: 400px) {
   menu.show {
