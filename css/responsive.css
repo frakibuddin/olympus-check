@@ -80,6 +80,9 @@
   .lft-img {
     display: none;
   }
+  .gym-img-inner img {
+    width: 100%;
+  }
 }
 @media (max-width: 600px) {
   .frm-section {
