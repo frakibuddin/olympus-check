@@ -28,13 +28,14 @@
     padding: 60px;
     opacity: 0;
     visibility: hidden;
-    right: 60px;
-    top: 60px;
+    right: 100px;
+    top: 70px;
     border-radius: 12px;
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.3s;
     overflow: hidden;
+    z-index: 999;
   }
   menu ul li:hover a::after,
   menu ul li:hover a {
@@ -42,7 +43,7 @@
     color: #ffffff;
   }
   menu.show {
-    top: 70px;
+    right: 60px;
     visibility: visible;
     opacity: 1;
   }
@@ -64,7 +65,7 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    gap: 10px;
+
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
@@ -119,6 +120,28 @@
   }
   .gym-img-inner span {
     padding: 26px;
+  }
+  .header-logo img {
+    width: 110px;
+  }
+  .header-search {
+    gap: 8px;
+  }
+  body {
+    font-size: 80%;
+  }
+  .title {
+    margin-top: 16px;
+  }
+  .sub-title {
+    font-size: 14px;
+  }
+  .wish-list-btns button {
+    width: 170px;
+    height: 60px;
+  }
+  .cart-date a {
+    font-size: 10px;
   }
 }
 @media (max-width: 400px) {

@@ -220,3 +220,10 @@ if (slider) {
 
   updateSlider(); // Initialize the slider
 }
+
+let icon_popup = document.querySelector(".icon-popup");
+let icon_popup_close = document.querySelector(".icon-popup-close");
+
+icon_popup_close.onclick = () => {
+  icon_popup.classList.add("close");
+};
